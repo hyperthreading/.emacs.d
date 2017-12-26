@@ -95,8 +95,9 @@
     ;; py-autopep8
     virtualenvwrapper
     
-
+    spacemacs-theme
     material-theme
+
     helm
     helm-cider
     helm-projectile
