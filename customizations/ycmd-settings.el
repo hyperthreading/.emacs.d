@@ -12,7 +12,7 @@
 (flycheck-ycmd-setup)
 
 ;; Show completions after 0.05 seconds
-(setq company-idle-delay 0.12)
+(setq company-idle-delay 0.25)
 
 ;; Activate for editing C++ files
 (add-hook 'after-init-hook #'global-ycmd-mode)
@@ -30,7 +30,7 @@
   (let ((python-executable (if is-windows "python" "python3"))
         (path-to-ycmd (if is-windows
                           "c:/ycmd/ycmd"
-                        "/mnt/c/Users/no1ex/ycmd/ycmd"
+                        "/home/carl/ycmd/ycmd"
                         )))
     (set-variable 'ycmd-server-command
                   (list python-executable path-to-ycmd))))

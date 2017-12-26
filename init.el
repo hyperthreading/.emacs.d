@@ -232,7 +232,7 @@
     ("~/Documents/org/workflowy.org" "~/Documents/org/system-programming.org")))
  '(package-selected-packages
    (quote
-    (helm-cider flycheck-clang-analyzer flycheck-ycmd flycheck magit sublimity expand-region spacemacs-theme evil-commentary evil-easymotion evil-surround ido-ubiquitous helm-projectile 0blayout aggressive-indent virtualenvwrapper smooth-scrolling smooth-scroll rjsx-mode py-autopep8 pos-tip material-theme helm exec-path-from-shell ein clojure-mode-extra-font-locking 4clojure)))
+    (bookmark+ helm-cider flycheck-clang-analyzer flycheck-ycmd flycheck magit sublimity expand-region spacemacs-theme evil-commentary evil-easymotion evil-surround ido-ubiquitous helm-projectile 0blayout aggressive-indent virtualenvwrapper smooth-scrolling smooth-scroll rjsx-mode py-autopep8 pos-tip material-theme helm exec-path-from-shell ein clojure-mode-extra-font-locking 4clojure)))
  '(python-shell-virtualenv-root "/Users/charles/pierre/")
  '(pyvenv-virtualenvwrapper-python "/usr/local/bin/python3.6")
  '(send-mail-function (quote mailclient-send-it))
