@@ -93,7 +93,7 @@
     ;; ein
     ;; flycheck
     ;; py-autopep8
-    virutalenvwrapper
+    virtualenvwrapper
     
 
     material-theme
