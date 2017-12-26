@@ -89,16 +89,30 @@
     tagedit
 
     ;; git integration
-    ;; magit
+    magit
     ;; ein
     ;; flycheck
     ;; py-autopep8
+    virutalenvwrapper
+    
+
     material-theme
     helm
+    helm-cider
     helm-projectile
+
+    evil
+    evil-surround
+    evil-commentary
+    evil-easymotion
+    
+
     ycmd
     company-ycmd
     flycheck-ycmd
+
+    rjsx-mode
+    expand-region
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user

@@ -29,7 +29,7 @@
 (let ((is-windows (eq system-type 'windows-nt)))
   (let ((python-executable (if is-windows "python" "python3"))
         (path-to-ycmd (if is-windows
-                          "c:/Users/no1ex/ycmd/ycmd"
+                          "c:/ycmd/ycmd"
                         "/mnt/c/Users/no1ex/ycmd/ycmd"
                         )))
     (set-variable 'ycmd-server-command
