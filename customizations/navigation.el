@@ -1,6 +1,3 @@
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-
 
 ;; "When several buffers visit identically-named files,
 ;; Emacs must give the buffers distinct names. The usual method
@@ -19,34 +16,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
 
-
-;; ido-mode allows you to more easily navigate choices. For example,
-;; when you want to switch buffers, ido presents you with a list
-;; of buffers in the the mini-buffer. As you start to type a buffer's
-;; name, ido will narrow down the list of buffers to match the text
-;; you've typed in
-;; http://www.emacswiki.org/emacs/InteractivelyDoThings
-(ido-mode t)
-
-;; This allows partial matches, e.g. "tl" will match "Tyrion Lannister"
-(setq ido-enable-flex-matching t)
-
-;; Turn this behavior off because it's annoying
-(setq ido-use-filename-at-point nil)
-
-;; Don't try to match file across all "work" directories; only match files
-;; in the current directory displayed in the minibuffer
-(setq ido-auto-merge-work-directories-length -1)
-
-;; Includes buffer names of recently open files, even if they're not
-;; open now
-(setq ido-use-virtual-buffers t)
-
-;; This enables ido in all contexts where it could be useful, not just
-;; for selecting buffer and file names
-(ido-ubiquitous-mode 1)
-
-;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (autoload 'dired-jump "dired-x"
@@ -55,18 +24,9 @@
 (autoload 'dired-jump-other-window "dired-x"
   "Like \\[dired-jump] (dired-jump) but in other window." t)
 
+
 (define-key global-map "\C-x\C-j" 'dired-jump)
 (define-key global-map "\C-x4\C-j" 'dired-jump-other-window)
-
-;; Enhances M-x to allow easier execution of commands. Provides
-;; a filterable list of possible commands in the minibuffer
-;; http://www.emacswiki.org/emacs/Smex
-(setq smex-save-file (concat user-emacs-directory ".smex-items"))
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-
-;; projectile everywhere!
-(projectile-global-mode)
 
 ;; windmove
 (global-set-key (kbd "C-<")  'windmove-left)
@@ -75,8 +35,3 @@
 (global-set-key (kbd "C-:")  'windmove-down)
 (global-set-key (kbd "s-w") 'delete-window)
 
-;; dired-jump to C-x C-j
-(global-set-key (kbd "C-x C-j") 'dired-jump)
-
-;; helm-projectile project navigation 
-(global-set-key (kbd "C-!") 'helm-projectile)
