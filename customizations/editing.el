@@ -65,6 +65,8 @@
 (set-language-environment "Korean")
 (global-set-key (kbd "C-q") 'toggle-input-method)
 
+(prefer-coding-system 'utf-8)
+
 ;; Type 3 키보드에서는 컨트롤 스페이스를 입력하면
 ;; 아래 스캔코드로 매핑이 되어 마킹을 사용할 수 없다.
 (global-set-key (kbd "C-<kanji>") 'set-mark-command)
@@ -72,3 +74,6 @@
 ;; (global-set-key (kbd "C-\\") 'helm-imenu)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c j") 'ace-jump-mode)

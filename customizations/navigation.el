@@ -29,9 +29,11 @@
 (define-key global-map "\C-x4\C-j" 'dired-jump-other-window)
 
 ;; windmove
-(global-set-key (kbd "C-<")  'windmove-left)
-(global-set-key (kbd "C->") 'windmove-right)
-(global-set-key (kbd "C-\"")    'windmove-up)
-(global-set-key (kbd "C-:")  'windmove-down)
+;; (global-set-key (kbd "C-<")  'windmove-left)
+;; (global-set-key (kbd "C->") 'windmove-right)
+;; (global-set-key (kbd "C-\"")    'windmove-up)
+;; (global-set-key (kbd "C-:")  'windmove-down)
+(windmove-default-keybindings)
+
 (global-set-key (kbd "s-w") 'delete-window)
 
