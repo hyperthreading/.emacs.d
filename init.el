@@ -39,6 +39,7 @@
                      company-quickhelp
                      company-lsp
                      lsp-mode
+                     lsp-ui
                      lsp-javascript-typescript
                      lsp-python
                      ace-jump-mode
