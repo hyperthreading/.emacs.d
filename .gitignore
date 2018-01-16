@@ -28,3 +28,6 @@ ido.last
 places
 .elc
 /ac-comphist.dat
+.python-environments/
+persp-confs/
+projectile.cache
