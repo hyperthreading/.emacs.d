@@ -37,15 +37,22 @@
 
 (global-set-key (kbd "s-w") 'delete-window)
 
-(require 'persp-mode)
-(persp-mode t)
-(with-eval-after-load "persp-mode-projectile-bridge-autoloads"
-  (add-hook 'persp-mode-projectile-bridge-mode-hook
-            #'(lambda ()
-                (if persp-mode-projectile-bridge-mode
-                    (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
-                  (persp-mode-projectile-bridge-kill-perspectives))))
-  (add-hook 'after-init-hook
-            #'(lambda ()
-                (persp-mode-projectile-bridge-mode 1))
-            t))
+;; Perspectives
+;; (require 'persp-mode)
+;; (persp-set-keymap-prefix (kbd "C-c q"))
+
+;; (with-eval-after-load "persp-mode-autoloads"
+;;   (setq wg-morph-on nil) ;; switch off animation
+;;   (setq persp-autokill-buffer-on-remove 'kill-weak)
+;;   (add-hook 'after-init-hook #'(lambda () (persp-mode 1))))
+
+;; (with-eval-after-load "persp-mode-projectile-bridge-autoloads"
+;;   (add-hook 'persp-mode-projectile-bridge-mode-hook
+;;             #'(lambda ()
+;;                 (if persp-mode-projectile-bridge-mode
+;;                     (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
+;;                   (persp-mode-projectile-bridge-kill-perspectives))))
+;;   (add-hook 'after-init-hook
+;;             #'(lambda ()
+;;                 (persp-mode-projectile-bridge-mode 1))
+;;             t))
