@@ -57,4 +57,5 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
-(load-theme 'challenger-deep t)
+;;(load-theme 'challenger-deep t)
+(require 'twilight-bright-theme)

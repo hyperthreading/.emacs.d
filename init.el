@@ -83,7 +83,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider))))
+    (twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -96,7 +96,7 @@
 (load "ui.el")
 (load "navigation.el")
 (load "editing.el")
-(load "editing-elisp.el")
+(load "editing-lisp.el")
 (load "editing-clang.el")
 (load "editing-js.el")
 (load "shell-integration.el")
