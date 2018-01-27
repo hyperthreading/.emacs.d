@@ -10,7 +10,9 @@
 
 (package-initialize) 
 
-(setq package-list '(cider
+(setq package-list '(use-package
+
+                     cider
                      inf-clojure
 
 		     paredit
@@ -57,6 +59,7 @@
 
                      ;; Theme
                      challenger-deep-theme
+                     twilight-bright-theme
                      
 		     rainbow-delimiters
 		     expand-region
