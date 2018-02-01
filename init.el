@@ -10,64 +10,72 @@
 
 (package-initialize) 
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (setq package-list '(use-package
 
-                     cider
-                     inf-clojure
+                      cider
+                      inf-clojure
 
-		     paredit
+                      paredit
 
-                     ;; Put some major modes here
-		     ;; JavaScript Development
-		     rjsx-mode
-		     js2-mode
-		     json-mode
+                      robe
+                      
+                      ;; Put some major modes here
+                      ;; JavaScript Development
+                      rjsx-mode
+                      js2-mode
+                      json-mode
 
-                     ;; Markdown
-                     markdown-mode
+                      ;; Markdown
+                      markdown-mode
 
-                     ;; Project Management
-                     
-		     magit
-		     dired+
-		     projectile
-                     helm
-                     helm-projectile
+                      restclient-mode
 
-                     persp-mode
-                     persp-mode-projectile-bridge
+                      ;; Project Management
+                      
+                      magit
+                      ;; Package not found 18.01.29
+                      ;; dired+ 
+                      projectile
+                      helm
+                      helm-projectile
 
-                     ;; Editing features
-		     flycheck
-                     flycheck-pos-tip
-                     flycheck-clojure
-                     
-		     company
-                     company-quickhelp
-                     company-lsp
-                     lsp-mode
-                     lsp-ui
-                     lsp-javascript-typescript
-                     lsp-python
-                     
-                     ace-jump-mode
-                     swiper
-                     swiper-helm
+                      persp-mode
+                      persp-mode-projectile-bridge
 
-                     ;; Python Support
-                     ein
+                      ;; Editing features
+                      flycheck
+                      flycheck-pos-tip
+                      flycheck-clojure
+                      
+                      company
+                      company-quickhelp
+                      company-lsp
+                      lsp-mode
+                      lsp-ui
+                      lsp-javascript-typescript
+                      lsp-python
+                      
+                      ace-jump-mode
+                      swiper
+                      swiper-helm
 
-                     ;; Theme
-                     challenger-deep-theme
-                     twilight-bright-theme
-                     
-		     rainbow-delimiters
-		     expand-region
-                     undo-tree
+                      ;; Python Support
+                      ein
 
-		     ycmd
-		     company-ycmd
-		     flycheck-ycmd))
+                      ;; Theme
+                      challenger-deep-theme
+                      twilight-bright-theme
+                      
+                      rainbow-delimiters
+                      expand-region
+                      undo-tree
+
+                      ycmd
+                      company-ycmd
+                      flycheck-ycmd))
 
 		     
 ; fetch the list of packages available 
@@ -84,15 +92,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
  '(package-selected-packages
    (quote
-    (twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider))))
+    (restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(web-mode-html-tag-face ((t (:inherit font-lock-function-name-face)))))
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
@@ -102,6 +113,7 @@
 (load "editing-lisp.el")
 (load "editing-clang.el")
 (load "editing-js.el")
+(load "editing-ruby.el")
 (load "shell-integration.el")
 (load "setup-company.el")
 (load "setup-flycheck.el")

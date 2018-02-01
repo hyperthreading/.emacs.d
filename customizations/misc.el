@@ -10,3 +10,5 @@
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
+
+(setq mac-command-modifier 'control)
