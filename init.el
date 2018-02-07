@@ -31,7 +31,7 @@
                       ;; Markdown
                       markdown-mode
 
-                      restclient-mode
+                      restclient
 
                       ;; Project Management
                       
@@ -42,21 +42,8 @@
                       helm
                       helm-projectile
 
-                      persp-mode
-                      persp-mode-projectile-bridge
-
-                      ;; Editing features
-                      flycheck
-                      flycheck-pos-tip
-                      flycheck-clojure
-                      
-                      company
-                      company-quickhelp
+                      persp-mode                      lsp-python
                       company-lsp
-                      lsp-mode
-                      lsp-ui
-                      lsp-javascript-typescript
-                      lsp-python
                       
                       ace-jump-mode
                       swiper
@@ -97,7 +84,15 @@
     ("c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
  '(package-selected-packages
    (quote
-    (restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider))))
+    (restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
+ '(safe-local-variable-values
+   (quote
+    ((eval progn
+           (add-to-list
+            (quote exec-path)
+            (concat
+             (locate-dominating-file default-directory ".dir-locals.el")
+             "node_modules/.bin/")))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -121,8 +116,7 @@
 (load "setup-clojure.el")
 (load "setup-cider.el")
 (load "setup-helm.el")
-(load "setup-helm-projectile.el")
 (load "setup-lsp.el")
 ;; (load "setup-ycmd.el")
 (load "misc.el")
-(put 'scroll-left 'disabled nil)
+(load "keybindings.el")
