@@ -19,6 +19,7 @@
                       inf-clojure
 
                       paredit
+                      lispy
 
                       robe
                       
@@ -42,7 +43,9 @@
                       helm
                       helm-projectile
 
-                      persp-mode                      lsp-python
+                      persp-mode
+                      lsp-python
+                      lsp-haskell
                       company-lsp
                       
                       ace-jump-mode
@@ -62,7 +65,9 @@
 
                       ycmd
                       company-ycmd
-                      flycheck-ycmd))
+                      flycheck-ycmd
+
+                      vlf))
 
 		     
 ; fetch the list of packages available 
@@ -84,7 +89,7 @@
     ("c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
  '(package-selected-packages
    (quote
-    (restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
+    (lsp-haskell lispy vlf restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
  '(safe-local-variable-values
    (quote
     ((eval progn

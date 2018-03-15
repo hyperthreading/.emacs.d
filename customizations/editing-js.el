@@ -19,6 +19,7 @@
     (add-to-list 'web-mode-content-types-alist
                  '("jsx" . "\\.jsx\\'")
                  '("javascript" . "\\.js\\'"))
+    (setq web-mode-enable-auto-quoting nil)
     (setq web-mode-markup-indent-offset 2)
     (setq web-mode-code-indent-offset 2)))
 

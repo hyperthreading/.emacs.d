@@ -1,5 +1,4 @@
 (require 'lsp-mode)
-(require 'lsp-flycheck)
 
 (require 'lsp-ui)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)

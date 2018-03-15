@@ -12,3 +12,5 @@
 (setq inhibit-startup-message t)
 
 (setq mac-command-modifier 'control)
+
+(setq dired-use-ls-dired nil)
