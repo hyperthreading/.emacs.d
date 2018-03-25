@@ -14,3 +14,6 @@
 
 (require 'lsp-python)
 (add-hook 'python-mode-hook #'lsp-python-enable)
+
+(require 'lsp-haskell)
+(add-hook 'haskell-mode-hook #'lsp-haskell-enable)
