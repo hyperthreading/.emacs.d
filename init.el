@@ -10,13 +10,16 @@
 
 (package-initialize) 
 
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
 
 (setq package-list '(use-package
 
+		      exec-path-from-shell
+
+                      flycheck-pos-tip
+                      
                       cider
                       inf-clojure
+                      flycheck-clojure
 
                       paredit
                       lispy
@@ -25,6 +28,7 @@
                       
                       ;; Put some major modes here
                       ;; JavaScript Development
+                      web-mode
                       rjsx-mode
                       js2-mode
                       json-mode
@@ -44,10 +48,14 @@
                       projectile
                       helm
                       helm-projectile
+                      helm-gtags
 
                       persp-mode
+                      lsp-mode
+                      lsp-ui
                       lsp-python
                       lsp-haskell
+                      lsp-javascript-typescript
                       cquery
                       company-lsp
                       
@@ -91,6 +99,9 @@
 
 (use-package scala-mode
   :pin melpa)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

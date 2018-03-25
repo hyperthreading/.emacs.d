@@ -1,8 +1,3 @@
-
-
-(require 'cquery)
-(setq cquery-executable "~/workspace/cquery")
-
 (require 'helm-gtags)
 ;; Enable helm-gtags-mode
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
