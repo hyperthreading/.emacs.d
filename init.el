@@ -113,10 +113,65 @@
     ("c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
  '(package-selected-packages
    (quote
-    (dockerfile-mode helm-gtags cquery lsp-haskell lispy vlf restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
+    (tide prettier-js add-node-modules-path ggtags dockerfile-mode helm-gtags cquery lsp-haskell lispy vlf restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
  '(safe-local-variable-values
    (quote
-    ((eval progn
+    ((eval if
+           (equal web-mode-content-type "javascript")
+           (web-mode-set-content-type "jsx")
+           (message "Content type now set to: %s" web-mode-content-type))
+     (eval progn
+           (add-to-list
+            (quote auto-mode-alist)
+            (quote
+             ("\\.js\\'" . web-mode)))
+           (add-to-list
+            (quote web-mode-content-types-alist)
+            (quote
+             ("jsx" . "\\.jsx\\'"))))
+     (eval progn
+           (add-to-list
+            (quote auto-mode-alist)
+            (quote
+             ("\\.js\\'" . web-mode)))
+           (add-to-list
+            (quote web-mode-content-types-alist)
+            (quote
+             ("jsx" . ".*\\.js[x]?\\'"))))
+     (eval add-hook
+           (quote web-mode-hook)
+           (lambda nil
+             (if
+                 (equal web-mode-content-type "javascript")
+                 (web-mode-set-content-type "jsx")
+               (message "Content type now set to: %s" web-mode-content-type))))
+     (eval progn
+           (add-to-list
+            (quote auto-mode-alist)
+            (quote
+             ("\\.js\\'" . web-mode)))
+           (add-to-list
+            (quote web-mode-content-types-alist)
+            (quote
+             ("javascript" . ".*\\.js\\'"))))
+     (eval progn
+           (add-to-list
+            (quote auto-mode-alist)
+            (quote
+             ("\\.js\\'" . web-mode)))
+           (add-to-list
+            (quote web-mode-content-types-alist)
+            (quote
+             ("javascript" . "\\.js\\'"))))
+     (eval progn
+           (add-to-list
+            (quote auto-mode-alist)
+            (quote
+             ("\\.js\\'" . web-mode)))
+           (add-to-list
+            (quote web-mode-content-types-alist)
+            ("javascript" . "\\.js\\'")))
+     (eval progn
            (add-to-list
             (quote exec-path)
             (concat

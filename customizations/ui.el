@@ -17,7 +17,7 @@
   (set-face-attribute 'default nil :height 160 :font "D2Coding"))
 
 (defun small-dpi ()
-  (set-face-attribute 'default nil :height 130 :font "D2Coding"))
+  (set-face-attribute 'default nil :height 80 :font "D2Coding"))
 
 (large-dpi)
 
