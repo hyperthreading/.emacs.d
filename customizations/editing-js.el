@@ -51,6 +51,8 @@
 (add-hook 'web-mode-hook #'enable-by-extension)
 (add-hook 'web-mode-hook #'add-node-modules-path)
 
+(require 'tide)
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -66,3 +68,5 @@
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(define-key tide-mode-map (kbd "C-c d") 'tide-documentation-at-point)

@@ -34,3 +34,4 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-\\") 'helm-imenu)
 
+(global-set-key (kbd "<f10>") 'shell)
