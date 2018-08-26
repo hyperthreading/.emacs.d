@@ -21,12 +21,19 @@
 
 ;; helm setup
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
+(global-set-key (kbd "C-c p b") 'helm-projectile-switch-to-buffer)
+(global-set-key (kbd "C-c p a") 'helm-projectile-ag)
+(global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
+
+
 ;; rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 ;; make TAB work in terminal
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 ;; list actions using C-z
 (define-key helm-map (kbd "C-z")  'helm-select-action)
+
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-mini)
