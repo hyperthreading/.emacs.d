@@ -83,6 +83,7 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-j") 'dired-jump)
+(windmove-default-keybindings)
 
 ;; This is only needed once, near the top of the file
 (eval-when-compile
