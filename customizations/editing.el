@@ -61,6 +61,3 @@
 ;; Type 3 키보드에서는 컨트롤 스페이스를 입력하면
 ;; 아래 스캔코드로 매핑이 되어 마킹을 사용할 수 없다.
 
-(require 'expand-region)
-(require 'ace-jump-mode)
-(global-undo-tree-mode)

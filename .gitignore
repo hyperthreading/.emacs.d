@@ -31,3 +31,4 @@ places
 .python-environments/
 persp-confs/
 projectile.cache
+semanticdb

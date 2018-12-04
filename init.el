@@ -8,214 +8,65 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
-(package-initialize) 
+(package-initialize)
 
+;; KR encoding
+(set-language-environment "Korean")
+(prefer-coding-system 'utf-8)
+(setq mac-command-modifier 'control)
 
-(setq package-list '(use-package
+;; This is only needed once, near the top of the file
+(eval-when-compile
+  (add-to-list 'load-path "~/.emacs.d/use-package")
+  (require 'use-package))
 
-		      exec-path-from-shell
-
-                      flycheck-pos-tip
-                      
-                      cider
-                      inf-clojure
-                      flycheck-clojure
-
-                      paredit
-                      lispy
-
-                      robe
-                      elpy
-
-                      ;; Put some major modes here
-                      ;; Elixir
-                      alchemist
-
-                      ;; JavaScript Development
-                      indium
-                      tide
-                      prettier-js
-                      add-node-modules-path
-                      web-mode
-                      rjsx-mode
-                      js2-mode
-                      json-mode
-
-                      dockerfile-mode
-                      feature-mode
-                      
-                      ;; Markdown
-                      markdown-mode
-
-                      restclient
-
-                      ;; Project Management
-                      
-                      magit
-                      ;; Package not found 18.01.29
-                      ;; dired+ 
-                      projectile
-                      helm
-                      helm-projectile
-                      helm-gtags
-                      helm-ag
-                      ag
-                      ggtags
-
-                      persp-mode
-                      lsp-mode
-                      lsp-ui
-                      lsp-python
-                      lsp-haskell
-                      lsp-javascript-typescript
-                      cquery
-                      company-lsp
-                      
-                      ace-jump-mode
-                      swiper
-                      swiper-helm
-
-                      ;; Python Support
-                      ein
-
-                      ;; Theme
-                      challenger-deep-theme
-                      twilight-bright-theme
-                      dracula-theme
-                      
-                      rainbow-delimiters
-                      expand-region
-                      undo-tree
-
-                      ycmd
-                      company-ycmd
-                      flycheck-ycmd
-
-                      vlf))
-
-		     
-; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
-(use-package ensime
+(use-package exec-path-from-shell
   :ensure t
-  :pin melpa)
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
 
-(use-package sbt-mode
-  :pin melpa)
+(use-package magit
+  :ensure t
+  :bind ("C-c g" . magit-status))
 
-(use-package scala-mode
-  :pin melpa)
+(use-package helm
+  :ensure t
+  :config
+  (bind-keys ("M-x" . helm-M-x)
+             ("M-y" . helm-show-kill-ring)
+             ("C-x C-f" . helm-find-files)
+             ("C-x b" . helm-mini)))
 
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
+(use-package projectile
+  :ensure t)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("c1390663960169cd92f58aad44ba3253227d8f715c026438303c09b9fb66cdfb" "2fb337439962efc687d9f9f2bf7263e6de3e6b4b910154a02927c2a70acf496c" default)))
- '(package-selected-packages
-   (quote
-    (yaml-mode alchemist dracula-theme intero indium elpy helm-ag ag feature-mode tide prettier-js add-node-modules-path ggtags dockerfile-mode helm-gtags cquery lsp-haskell lispy vlf restclient robe web-mode twilight-bright-theme parinfer persp-mode-projectile-bridge multiple-cursors persp-mode swiper-helm swiper company-jedi lsp-ui company-quickhelp undo-tree inf-clojure jedi python-mode ein use-package smartparens rainbow-delimiters flycheck-clojure flycheck-pos-tip ace-jump-mode challenger-deep-theme company-lsp markdown-mode helm-projectile flycheck-ycmd company-ycmd ycmd company flycheck expand-region projectile dired+ magit json-mode rjsx-mode paredit cider)))
- '(safe-local-variable-values
-   (quote
-    ((eval if
-           (equal web-mode-content-type "javascript")
-           (web-mode-set-content-type "jsx")
-           (message "Content type now set to: %s" web-mode-content-type))
-     (eval progn
-           (add-to-list
-            (quote auto-mode-alist)
-            (quote
-             ("\\.js\\'" . web-mode)))
-           (add-to-list
-            (quote web-mode-content-types-alist)
-            (quote
-             ("jsx" . "\\.jsx\\'"))))
-     (eval progn
-           (add-to-list
-            (quote auto-mode-alist)
-            (quote
-             ("\\.js\\'" . web-mode)))
-           (add-to-list
-            (quote web-mode-content-types-alist)
-            (quote
-             ("jsx" . ".*\\.js[x]?\\'"))))
-     (eval add-hook
-           (quote web-mode-hook)
-           (lambda nil
-             (if
-                 (equal web-mode-content-type "javascript")
-                 (web-mode-set-content-type "jsx")
-               (message "Content type now set to: %s" web-mode-content-type))))
-     (eval progn
-           (add-to-list
-            (quote auto-mode-alist)
-            (quote
-             ("\\.js\\'" . web-mode)))
-           (add-to-list
-            (quote web-mode-content-types-alist)
-            (quote
-             ("javascript" . ".*\\.js\\'"))))
-     (eval progn
-           (add-to-list
-            (quote auto-mode-alist)
-            (quote
-             ("\\.js\\'" . web-mode)))
-           (add-to-list
-            (quote web-mode-content-types-alist)
-            (quote
-             ("javascript" . "\\.js\\'"))))
-     (eval progn
-           (add-to-list
-            (quote auto-mode-alist)
-            (quote
-             ("\\.js\\'" . web-mode)))
-           (add-to-list
-            (quote web-mode-content-types-alist)
-            ("javascript" . "\\.js\\'")))
-     (eval progn
-           (add-to-list
-            (quote exec-path)
-            (concat
-             (locate-dominating-file default-directory ".dir-locals.el")
-             "node_modules/.bin/")))))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(web-mode-html-tag-face ((t (:inherit font-lock-function-name-face)))))
+(use-package helm-projectile
+  :ensure t
+  :bind
+  ("C-c p p" . helm-projectile-switch-project)
+  ("C-c p b" . helm-projectile-switch-to-buffer)
+  ("C-c p f" . helm-projectile-find-file))
 
-(add-to-list 'load-path "~/.emacs.d/customizations")
+(use-package company
+  :ensure t)
 
-(load "ui.el")
-(load "navigation.el")
-(load "editing.el")
-(load "editing-lisp.el")
-(load "editing-clang.el")
-(load "editing-js.el")
-(load "editing-ruby.el")
-(load "lang-python.el")
-(load "lang-haskell.el")
-(load "shell-integration.el")
-(load "setup-company.el")
-(load "setup-flycheck.el")
-(load "setup-projectile.el")
-(load "setup-clojure.el")
-(load "setup-cider.el")
-(load "setup-helm.el")
-(load "setup-lsp.el")
-;; (load "setup-ycmd.el")
-(load "misc.el")
-(load "keybindings.el")
+(use-package rainbow-delimiters
+  :ensure t)
+
+(use-package expand-region
+  :ensure t
+  :bind
+  ("C-=" . er/expand-region))
+
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode))
+
+(use-package ace-jump-mode
+  :ensure t
+  :bind ("C-." . ace-jump-mode))
+
+(use-package dracula-theme
+  :ensure t)
+
