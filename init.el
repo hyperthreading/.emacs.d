@@ -147,6 +147,17 @@
 (use-package dracula-theme
   :ensure t)
 
+;; Language Supports
+;; OCaml
+(use-package tuareg
+  :ensure t)
+
+(use-package merlin
+  :ensure t
+  :hook (tuareg-mode . merlin-mode))
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -154,7 +165,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode vlf use-package undo-tree twilight-bright-theme tide swiper-helm robe rjsx-mode restclient rainbow-delimiters prettier-js persp-mode parinfer paredit magit lsp-ui lsp-python lsp-javascript-typescript lsp-haskell lispy json-mode intero inf-clojure indium helm-projectile helm-gtags helm-ag ggtags flycheck-ycmd flycheck-pos-tip flycheck-clojure feature-mode expand-region exec-path-from-shell ensime elpy ein dracula-theme dockerfile-mode cquery company-ycmd company-lsp challenger-deep-theme alchemist ag add-node-modules-path ace-jump-mode))))
+    (merlin tuareg yaml-mode web-mode vlf use-package undo-tree twilight-bright-theme tide swiper-helm robe rjsx-mode restclient rainbow-delimiters prettier-js persp-mode parinfer paredit magit lsp-ui lsp-python lsp-javascript-typescript lsp-haskell lispy json-mode intero inf-clojure indium helm-projectile helm-gtags helm-ag ggtags flycheck-ycmd flycheck-pos-tip flycheck-clojure feature-mode expand-region exec-path-from-shell ensime elpy ein dracula-theme dockerfile-mode cquery company-ycmd company-lsp challenger-deep-theme alchemist ag add-node-modules-path ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
