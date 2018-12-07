@@ -75,6 +75,15 @@
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
 
+;; Highlights matching parenthesis
+(show-paren-mode 1)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Don't use hard tabs
+(setq-default indent-tabs-mode nil)
+
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
 
@@ -156,7 +165,8 @@
   :ensure t
   :hook (tuareg-mode . merlin-mode))
 
-
+(use-package web-mode
+  :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
