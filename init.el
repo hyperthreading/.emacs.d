@@ -159,7 +159,8 @@
 ;; Language Supports
 ;; OCaml
 (use-package tuareg
-  :ensure t)
+  :ensure t
+  :commands tuareg-mode)
 
 (use-package merlin
   :ensure t
