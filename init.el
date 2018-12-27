@@ -91,13 +91,15 @@
 (setq ring-bell-function 'ignore)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "C-x C-j") 'dired-jump)
 (windmove-default-keybindings)
 
 ;; This is only needed once, near the top of the file
 (eval-when-compile
   (add-to-list 'load-path "~/.emacs.d/use-package")
   (require 'use-package))
+
+(use-package dired-x
+  :bind ("C-x C-j" . dired-jump))
 
 (use-package exec-path-from-shell
   :ensure t
