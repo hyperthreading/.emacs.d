@@ -10,6 +10,9 @@
 
 (package-initialize)
 
+;; backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+
 ;; KR encoding
 (set-language-environment "Korean")
 (prefer-coding-system 'utf-8)
@@ -195,7 +198,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (markdown-mode geiser merlin tuareg yaml-mode web-mode vlf use-package undo-tree twilight-bright-theme tide swiper-helm robe rjsx-mode restclient rainbow-delimiters prettier-js persp-mode parinfer paredit magit lsp-ui lsp-python lsp-javascript-typescript lsp-haskell lispy json-mode intero inf-clojure indium helm-projectile helm-gtags helm-ag ggtags flycheck-ycmd flycheck-pos-tip flycheck-clojure feature-mode expand-region exec-path-from-shell ensime elpy ein dracula-theme dockerfile-mode cquery company-ycmd company-lsp challenger-deep-theme alchemist ag add-node-modules-path ace-jump-mode))))
+    (forge markdown-mode geiser merlin tuareg yaml-mode web-mode vlf use-package undo-tree twilight-bright-theme tide swiper-helm robe rjsx-mode restclient rainbow-delimiters prettier-js persp-mode parinfer paredit magit lsp-ui lsp-python lsp-javascript-typescript lsp-haskell lispy json-mode intero inf-clojure indium helm-projectile helm-gtags helm-ag ggtags flycheck-ycmd flycheck-pos-tip flycheck-clojure feature-mode expand-region exec-path-from-shell ensime elpy ein dracula-theme dockerfile-mode cquery company-ycmd company-lsp challenger-deep-theme alchemist ag add-node-modules-path ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
